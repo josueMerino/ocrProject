@@ -3,7 +3,7 @@ import numpy as np
 import easyocr
 import matplotlib.pyplot as plt
 
-im_1_path = './images/im4.png'
+im_1_path = './images/frase.jpg'
 
 
 def recognize_text(img_path):
@@ -41,11 +41,11 @@ def overlay_ocr_text(img_path, save_name):
 
             # create a rectangle for bbox display
             cv2.rectangle(img=img, pt1=top_left, pt2=bottom_right,
-                          color=(255, 0, 0), thickness=1)
+                          color=(255, 0, 0), thickness=2)
 
             # put recognized text
             cv2.putText(img=img, text=text, org=(
-                top_left[0], top_left[1] - 10), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=0.5, color=(255, 0, 0), thickness=1)
+                top_left[0], top_left[1] - 10), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=0.7, color=(255, 0, 0), thickness=3)
     # show and save image
     axarr[1].imshow(img)
     plt.show()
